@@ -1,7 +1,7 @@
 package com.example.polycustomer.Model;
 
 public class User {
-    private String id, nameUser,numberUser,addressUser,classUser, imageURl;
+    private String id, nameUser,numberUser,addressUser,classUser, imageURl, status;
 
 
     public User(String id, String nameUser, String numberUser, String addressUser, String classUser,String imageURl) {
@@ -11,6 +11,7 @@ public class User {
         this.addressUser = addressUser;
         this.classUser = classUser;
         this.imageURl = imageURl;
+
     }
 
     public User() {
@@ -63,4 +64,5 @@ public class User {
     public void setImageURl(String imageURl) {
         this.imageURl = imageURl;
     }
+
 }

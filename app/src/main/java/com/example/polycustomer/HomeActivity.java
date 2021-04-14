@@ -104,7 +104,7 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         payment.setOnClickListener(v -> {
-            startActivity(new Intent(HomeActivity.this, MessageActivity.class));
+            startActivity(new Intent(HomeActivity.this, PayActivity.class));
         });
     }
 

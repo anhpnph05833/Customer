@@ -6,10 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MessageActivity"
-    android:orientation="vertical">
-
+    android:orientation="vertical"
+    android:background="#e6e6e6"
+    >
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -39,5 +41,38 @@
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recycler_view_msg"
+        android:layout_below="@+id/bar_layout"
+        android:layout_above="@+id/bottom"
+        />
 
+    <RelativeLayout
+        android:id="@+id/bottom"
+        android:layout_alignParentBottom="true"
+        android:padding="5dp"
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        
+        <EditText
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:hint="Nhập vào đây..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edt_text_send"
+            android:layout_toLeftOf="@+id/btn_send_msg"
+            />
+        <ImageButton
+            android:id="@+id/btn_send_msg"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/iconsend"
+            />
+    </RelativeLayout>
 </RelativeLayout>

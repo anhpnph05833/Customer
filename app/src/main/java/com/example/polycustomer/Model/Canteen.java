@@ -1,16 +1,16 @@
 package com.example.polycustomer.Model;
 
 public class Canteen {
-    private String id, avatar, nameboss, nameCanteen, address, phone, mail;
+    private String id, avatar, nameboss, nameCanteen, address, phone,status;
 
-    public Canteen(String id, String avatar, String nameboss, String nameCanteen, String address, String phone, String mail) {
+    public Canteen(String id, String avatar, String nameboss, String nameCanteen, String address, String phone,String status) {
         this.id = id;
         this.avatar = avatar;
         this.nameboss = nameboss;
         this.nameCanteen = nameCanteen;
         this.address = address;
         this.phone = phone;
-        this.mail = mail;
+        this.status = status;
     }
 
     public Canteen() {
@@ -64,11 +64,11 @@ public class Canteen {
         this.phone = phone;
     }
 
-    public String getMail() {
-        return mail;
+    public String getStatus() {
+        return status;
     }
 
-    public void setMail(String mail) {
-        this.mail = mail;
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

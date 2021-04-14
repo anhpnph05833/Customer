@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.polycustomer.Fragment.ChatsFragment;
+import com.example.polycustomer.Fragment.ProfileFragment;
 import com.example.polycustomer.Fragment.UsersFragment;
 import com.example.polycustomer.Model.User;
 import com.google.android.material.tabs.TabLayout;
@@ -25,6 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -60,7 +62,7 @@ public class ChatActivity extends AppCompatActivity {
                 if (user.getImageURl().equals("default")) {
                     profile_image.setImageResource(R.drawable.iconavatar);
                 } else {
-                    Glide.with(ChatActivity.this).load(user.getImageURl()).into(profile_image);
+                    Glide.with(getApplicationContext()).load(user.getImageURl()).into(profile_image);
                 }
             }
 
@@ -72,6 +74,7 @@ public class ChatActivity extends AppCompatActivity {
         ViewPageAdapter viewPageAdapter = new ViewPageAdapter(getSupportFragmentManager());
         viewPageAdapter.addFragment(new ChatsFragment(), "Chats");
         viewPageAdapter.addFragment(new UsersFragment(), "Users");
+        viewPageAdapter.addFragment(new ProfileFragment(), "Profile");
 
         viewPager.setAdapter(viewPageAdapter);
 
@@ -112,5 +115,25 @@ public class ChatActivity extends AppCompatActivity {
             return titles.get(position);
         }
     }
+    private void status(String status){
+        reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
 
+        HashMap<String, Object> hashMap = new HashMap<>();
+        hashMap.put("status", status);
+
+        reference.updateChildren(hashMap);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        status("online");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        status("offline");
+
+    }
 }

@@ -62,7 +62,7 @@ public class UsersFragment extends Fragment {
                     assert canteen != null;
                     assert firebaseUser !=null;
 
-                    if (!canteen.getPhone().equals(firebaseUser.getUid())){
+                    if (!canteen.getId().equals(firebaseUser.getUid())){
                         mCanteens.add(canteen);
                     }
                 }

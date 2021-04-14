@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -16,6 +17,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.core.Tag;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.HashMap;
 
@@ -57,6 +61,7 @@ public class AddProfileActivity extends AppCompatActivity {
         String userID = firebaseUser.getUid();
         reference = FirebaseDatabase.getInstance().getReference("Users").child(userID);
 
+        String token = FirebaseInstanceId.getInstance().getToken();
         HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("id", userID);
         hashMap.put("nameUser", nameUser);
@@ -64,6 +69,8 @@ public class AddProfileActivity extends AppCompatActivity {
         hashMap.put("addressUser", addressUser);
         hashMap.put("classUser", classUer);
         hashMap.put("imageURl", "default");
+        hashMap.put("token", token);
+
 
         reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
