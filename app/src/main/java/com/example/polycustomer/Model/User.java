@@ -1,19 +1,22 @@
 package com.example.polycustomer.Model;
 
 public class User {
-    private String id, nameUser,numberUser,addressUser,classUser, imageURl, status;
+    private String id, nameUser,numberUser,addressUser,classUser, imageURl, token, listChat;
 
 
-    public User(String id, String nameUser, String numberUser, String addressUser, String classUser,String imageURl) {
+
+    public User(String id, String nameUser, String numberUser, String addressUser,
+                String classUser, String imageURl, String token, String listChat) {
+
         this.id = id;
         this.nameUser = nameUser;
         this.numberUser = numberUser;
         this.addressUser = addressUser;
         this.classUser = classUser;
         this.imageURl = imageURl;
-
+        this.token = token;
+        this.listChat = listChat;
     }
-
     public User() {
     }
 
@@ -65,4 +68,19 @@ public class User {
         this.imageURl = imageURl;
     }
 
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public String getListChat() {
+        return listChat;
+    }
+
+    public void setListChat(String listChat) {
+        this.listChat = listChat;
+    }
 }

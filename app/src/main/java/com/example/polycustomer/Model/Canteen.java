@@ -1,16 +1,21 @@
 package com.example.polycustomer.Model;
 
-public class Canteen {
-    private String id, avatar, nameboss, nameCanteen, address, phone,status;
+import java.util.ArrayList;
 
-    public Canteen(String id, String avatar, String nameboss, String nameCanteen, String address, String phone,String status) {
+public class Canteen {
+    private String id, avatar, nameboss, nameCanteen, address, phone,token;
+    private ArrayList<Object> listProduct;
+
+    public Canteen(String id, String avatar, String nameboss, String nameCanteen, String address,
+                   String phone, String token, ArrayList<Object> listProduct) {
         this.id = id;
         this.avatar = avatar;
         this.nameboss = nameboss;
         this.nameCanteen = nameCanteen;
         this.address = address;
         this.phone = phone;
-        this.status = status;
+        this.token = token;
+        this.listProduct = listProduct;
     }
 
     public Canteen() {
@@ -64,11 +69,19 @@ public class Canteen {
         this.phone = phone;
     }
 
-    public String getStatus() {
-        return status;
+    public String getToken() {
+        return token;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public ArrayList<Object> getListProduct() {
+        return listProduct;
+    }
+
+    public void setListProduct(ArrayList<Object> listProduct) {
+        this.listProduct = listProduct;
     }
 }

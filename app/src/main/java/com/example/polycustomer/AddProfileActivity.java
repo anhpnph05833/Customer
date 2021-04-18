@@ -32,7 +32,6 @@ public class AddProfileActivity extends AppCompatActivity {
     FirebaseAuth auth;
     DatabaseReference reference;
 
-
       @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +69,7 @@ public class AddProfileActivity extends AppCompatActivity {
         hashMap.put("classUser", classUer);
         hashMap.put("imageURl", "default");
         hashMap.put("token", token);
+        hashMap.put("listChat", "");
 
 
         reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {

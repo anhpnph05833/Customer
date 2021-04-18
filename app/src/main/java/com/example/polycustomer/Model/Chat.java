@@ -1,48 +1,50 @@
 package com.example.polycustomer.Model;
 
-public class Chat {
-    private String sender, receiver, message;
-    private boolean isseen;
+import java.util.ArrayList;
 
-    public Chat(String sender, String receiver, String message,boolean isseen) {
-        this.sender = sender;
-        this.receiver = receiver;
-        this.message = message;
-        this.isseen = isseen;
+public class Chat {
+    private String tokenCustomer, tokenUser;
+    private ArrayList<String> listMesCustomer,listMesUser;
+
+    public Chat(String tokenCustomer, String tokenUser, ArrayList<String> listMesCustomer, ArrayList<String> listMesUser) {
+        this.tokenCustomer = tokenCustomer;
+        this.tokenUser = tokenUser;
+        this.listMesCustomer = listMesCustomer;
+        this.listMesUser = listMesUser;
     }
 
     public Chat() {
     }
 
-    public String getSender() {
-        return sender;
+    public String getTokenCustomer() {
+        return tokenCustomer;
     }
 
-    public void setSender(String sender) {
-        this.sender = sender;
+    public void setTokenCustomer(String tokenCustomer) {
+        this.tokenCustomer = tokenCustomer;
     }
 
-    public String getReceiver() {
-        return receiver;
+    public String getTokenUser() {
+        return tokenUser;
     }
 
-    public void setReceiver(String receiver) {
-        this.receiver = receiver;
+    public void setTokenUser(String tokenUser) {
+        this.tokenUser = tokenUser;
     }
 
-    public String getMessage() {
-        return message;
+    public ArrayList<String> getListMesCustomer() {
+        return listMesCustomer;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setListMesCustomer(ArrayList<String> listMesCustomer) {
+        this.listMesCustomer = listMesCustomer;
     }
 
-    public boolean isIsseen() {
-        return isseen;
+    public ArrayList<String> getListMesUser() {
+        return listMesUser;
     }
 
-    public void setIsseen(boolean isseen) {
-        this.isseen = isseen;
+    public void setListMesUser(ArrayList<String> listMesUser) {
+        this.listMesUser = listMesUser;
     }
 }
